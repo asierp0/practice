@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Dog Breeds of the World</title> 
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#about">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Dog Breeds</h2>
+                <img src="./download.jpeg" alt="an imgage of dogs">
+                <ul>
+                    <li>Pug</li>
+                    <li>German Shepherd</li>
+                    <li>Standard Poodle</li>
+                </ul>
+                <a href="https://www.akc.org">The Kennel Club of America</a>
+
+                <table>
+                    <tr>
+                        <th>Breed</th>
+                        <th>Size</th>
+                        <th>Temperment</th>
+                        <th>Life Expectancy</th>
+                    </tr>
+                    <tr>
+                        <td>Pug</td>
+                        <td>Small</td>
+                        <td>Pugnacious</td>
+                        <td>10-12yrs</td>
+                    </tr>
+                    <tr>
+                        <td>German Shepherd</td>
+                        <td>Large</td>
+                        <td>Gentle</td>
+                        <td>8-10yrs</td>
+                    </tr>
+                    <tr>
+                        <td>Standard Poodle</td>
+                        <td>Medium</td>
+                        <td>Gentle</td>
+                        <td>10-12yrs</td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <form action="/stubmit" method="POST">
+                    <div>
+                        <label for="user-name">Your Name</label>
+                        <input type="text" id="user-name" name="username" value="" placeholder="your full name">
+                    </div>
+                    <div>
+                        <label for="dog-name">Your Dog's Name</label>
+                        <input type="text" id="dog-name" placeholder="dog's name">
+                    </div>
+                    <div>
+                        <label for="dog-breed">Breed</label>
+                        <select>
+                            <option value="german-shepherd">German Shepherd</option>
+                            <option value="pug">Pug</option>
+                            <option value="poodle">Poodle</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="user-email">Your Email</label>
+                        <input type="email" id="user-email" placeholder="your email">
+                    </div>
+                    <div>
+                        <p>Would you like to receive our news letter?</p>
+                        <label for="news-letter-yes">Yes</label>
+                        <input type="radio" id="news-letter-yes">
+                        <label for="news-letter-no">No</label>
+                        <input type="radio" id="news-letter-no">
+                    </div>
+                    <button type="submit" onsubmit="">Submit</button>
+                </form>
+
+            </section>
+        </main>
+        <footer>
+            <p></p>
+        </footer>
+    </body>
+</html>
