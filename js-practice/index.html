@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task Application</title>
+    </head>
+    <body>
+        <main>
+            <form id="task-form">
+                <label for="task-field">Add a Task</label>
+                <input type="text" id="task-field" placeholder="add a task">
+                <select>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+
+            <p>Task Count: <span id="task-count">0</span></p>
+
+            <p>Task:</p>
+            <ul id="task-list">
+            </ul>
+        </main>
+        <script>
+            const taskForm = document.querySelector("form");
+            const taskField = document.querySelector("input");
+            const prioritySelection = document.querySelector("select");
+            const submitBtn = document.querySelector("button");
+            const taskCount = document.querySelector("span");
+            const taskList = document.querySelector("ul");
+            const taskCounter = 0;
+            var taskArray = [];
+
+            taskForm.addEventListener("submit", function(event){
+                event.preventDefault();
+
+                const task = taskField.value;
+                const priority = prioritySelection.value;
+
+                const taskObject = {
+                    task: task,
+                    priority: priority,
+                    completed: false
+                };
+
+                taskArray.push(taskObject);
+
+                displayTasks(taskArray);
+
+                taskCount.innerHTML = taskArray.length;
+
+            });
+
+            function getPriorityText(priority){
+                if(priority === "low"){
+                    return "Low Priority"
+                }
+                if(priority === "medium"){
+                    return "Medium Priority"
+                }
+                if(priority === "high"){
+                    return "High Priority"
+                }
+            }
+
+
+            function displayTasks(taskArray){
+                for(const task of taskArray){
+                    const item = document.createElement("li");
+
+                    const priorityLevel = getPriorityText(task.priority);
+
+                    item.textContent = (`${task.task} - ${priorityLevel} - ${task.completed}`);
+
+                    taskList.appendChild(item);
+
+                }
+            }
+
+
+
+        </script>
+    </body>
+</html>
