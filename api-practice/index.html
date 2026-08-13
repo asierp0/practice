@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="loadUserBtn" id="load-user-btn" type="button">Load Users</button>
+    <p class="statusMessage" id="status-message"></p>
+    <ul class="userList" id="user-list"></ul>
+</body>
+<script>
+
+    const loadBtn = document.getElementById("load-user-btn");
+    const statMsg = document.getElementById("status-message");
+    const userList = document.getElementById("user-list");
+    const URL = "https://jsonplaceholder.typicode.com/users"
+
+    loadBtn.addEventListener("click", (event) => {
+        dataGet(URL);
+    });
+
+    async function dataGet(url){
+
+        loadBtn.disabled = true;
+
+        statMsg.textContent = "User List Loading..."
+
+        try{
+            const response = await fetch(url);
+
+            if(!response.ok){
+                alert("fetch could not be executed.");
+                return
+            }
+
+            const data = await response.json();
+
+            for(user of data){
+                let userName = user.name;
+                let userEmail = user.email;
+
+                let listItem = document.createElement("li");
+                listItem.innerHTML = `User Name: ${userName} -- User Email: ${userEmail}`;
+                userList.appendChild(listItem);
+            }
+
+            statMsg.textContent = ("Load Successful!");
+            loadBtn.disabled = false;
+        }
+        catch(error)
+        {
+            console.error(`${error} - ${response.status}`)
+        }
+    } 
+</script>
+</html>

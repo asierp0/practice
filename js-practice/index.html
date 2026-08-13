@@ -31,8 +31,8 @@
             const submitBtn = document.querySelector("button");
             const taskCount = document.querySelector("span");
             const taskList = document.querySelector("ul");
-            const taskCounter = 0;
-            var taskArray = [];
+            const option = document.querySelector("option");
+            let taskArray = [];
 
             taskForm.addEventListener("submit", function(event){
                 event.preventDefault();
@@ -43,7 +43,6 @@
                 const taskObject = {
                     task: task,
                     priority: priority,
-                    completed: false
                 };
 
                 taskArray.push(taskObject);
@@ -51,6 +50,10 @@
                 displayTasks(taskArray);
 
                 taskCount.innerHTML = taskArray.length;
+
+                taskField.value = "";
+                prioritySelection.value = "low";
+                taskArray = [];
 
             });
 
@@ -73,15 +76,20 @@
 
                     const priorityLevel = getPriorityText(task.priority);
 
-                    item.textContent = (`${task.task} - ${priorityLevel} - ${task.completed}`);
+                    const completeBtn = document.createElement("button")
+                    completeBtn.type = "button";
+                    completeBtn.innerHTML = "Complete";
+                    completeBtn.addEventListener("click", (event) => {
+                        item.innerHTML = (`${task.task} - ${priorityLevel} - COMPLETED`)
+                    })
+
+                    item.innerHTML = (`${task.task} - ${priorityLevel}`);
+                    item.appendChild(completeBtn);
 
                     taskList.appendChild(item);
 
                 }
             }
-
-
-
         </script>
     </body>
 </html>
