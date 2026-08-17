@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+
+    background-color: #003459;
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+button{
+    background-color: #ff7f11;
+    color: black;
+    border-color: white;
+    margin:5px;
+    font-size: 1rem;
+}
+
+
+.button-bar{
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    gap: 20px
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info{
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 50px;
+    max-width: 800px;
+    max-height: 1000px;
+    margin-top: 100px;
+    box-shadow: 3px 3px 10px 4px rgba(255, 255, 255, 0.4) ;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="button-bar">
+        <button id="toggle-login">Toggle Login</button>
+        <button id="change-theme">Change Theme</button>
+        <button id="change-nickname-btn" type="click">Change Nickname</button>
+        <button id="add-hobby-btn" type="click">Add Hobby</button>
+        <input id="hobby-input" type="text">
+    </div>
+    <div class="main-container">
+        <div class="user-info">
+            <h2 id="welcome-msg"></h2>
+            <p>User Location:<span  id="user-local"></span></p>
+            <p>User Nickname:<span  id="user-nickname"></span></p>
+            <p>User Hobbies:</p>
+            <ul id="hobby-list"></ul>
+            <p>Login Status:<span id="login-status"></span></p>
+            <p>Current Theme:<span id="theme-type"></span></p>
+            <p>Truthy Check:<input type="text" id="truthy-input"><button id="truthy-button">Check</button></p>
+            <p id="truthy-result"></p>
+        </div>
+    </div>     
+    </body>
+
+    <script src="./script.js"></script>
+</body>
+</html>
