@@ -13,7 +13,6 @@ const customerOne: Customer = {
     firstName: "Bob",
     lastName: "Vance",
     email: "bvance@example.com"
-
 }
 
 const customerTwo: Customer = {
@@ -146,7 +145,7 @@ function checkEscalatedTicket(ticket: Ticket): ticket is EscalatedTicket{
 }
 
 
-function displayTicket(ticket: Ticket): void {
+function displayTicket(ticket: Ticket): void{
 
     if(checkEscalatedTicket(ticket)){
         console.log("========= ESCALATED TICKET =========")
@@ -203,7 +202,7 @@ function anyTypeExample(): void{
     catch(error){
         console.log("ID should be displayed here - Runtime error caused by ANY allowing a number to use a string method.\n")
     }
-
+    return
 }
 
 anyTypeExample();

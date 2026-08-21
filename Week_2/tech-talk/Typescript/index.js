@@ -1,15 +1,21 @@
 "use strict";
-// any vs unknown
+// Pick<T, Key> - Omit<T, Key> - Partial<T> 
 Object.defineProperty(exports, "__esModule", { value: true });
-let value = 2;
-// value++;
-// value.toUpperCase();
-if (typeof value === 'number') {
-    value++;
-    console.log(value);
-}
-if (typeof value === 'string') {
-    value.toUpperCase();
-    console.log(value);
-}
+//updates with partial
+const course = {
+    id: 1,
+    title: "MA-111",
+    instructor: "Dr. Smith",
+    lessons: []
+};
+const updatedCourse = {
+    title: "ANT101"
+};
+const newCourse = {
+    ...course,
+    ...updatedCourse
+};
+console.log(course);
+console.log(newCourse);
+//merge with original
 //# sourceMappingURL=index.js.map
