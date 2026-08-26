@@ -1,47 +1,60 @@
 
-// Pick<T, Key> - Omit<T, Key> - Partial<T> 
+// type narrowing with "typeof" - "in" - "instanceOf" 
 
-//the question is...
 
-type Course = {
-    id: number,
-    title: string,
-    instructor: string,
-    lessons: [],
-    //syllabus: {}
+//typeof
+
+function printId(id: string | number): void{
+    console.log(id.toUpperCase());
 }
 
-type Lesson = {
-    id: number,
-    title: string,
-    course: Course
-    pages: number[]
+function logId(id: string | number): void{
+    if(typeof id === "string"){
+        console.log(id.toUpperCase());
+    }
+    else{
+        console.log(id);
+    }
 }
 
-type newCourse = Pick<Course, "title" | "instructor">
+//in
 
-type newLesson = Omit<Lesson, "id">
 
-type partialCourse = Partial<Course>
-
-//updates with partial
-
-const course: Course = {
-    id: 1,
-    title: "MA-111",
-    instructor: "Dr. Smith",
-    lessons: []
-}
-
-const updatedCourse: Partial<Course> = {
-    title: "ANT101"
+type User = {
+    id: number;
+    name: string;
 };
 
-const newCourse: Course = {
-    ...course,
-    ...updatedCourse
+type RegisteredUser = {
+    id: number;
+    name: string;
+    email: string;
+};
+
+function printUser(user: User | RegisteredUser): void {
+    if ("email" in user) {
+        console.log(user.email);
+    } else {
+        console.log(user.name);
+    }
 }
 
-console.log(course);
-console.log(newCourse);
+// instanceof
 
+class Agent {
+    id: number;
+    name: string;
+    email: string;
+
+    constructor(id: number, name: string, email: string){
+        this.id = id
+        this.name = name
+        this.email = email
+    }
+}
+
+const agent = new Agent(1, "Aaron", "aaron@example.com")
+
+if(agent instanceof Agent){
+    console.log(agent);
+}

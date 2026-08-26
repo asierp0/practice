@@ -1,16 +1,15 @@
 // Interfaces
 
 interface Person{
-    id: number
+    id: number;
     name: string;
     age: number;
 }
 
 interface Student extends Person{
     isEnrolled: boolean;
-    major: string
+    major: string;
     gpa: number;
-    
 }
 
 interface Instructor extends Person{
@@ -109,6 +108,7 @@ const updatedCourse: Course = {
     ...course,
     ...courseUpdate
 }
+
 
 const courseSum2 = createCourseSummary(updatedCourse)
 

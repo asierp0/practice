@@ -1,0 +1,46 @@
+nav{
+  background-color: white;
+}
+
+a{
+  text-decoration: none;
+  color: darkblue;
+  
+}
+
+p{
+  margin: 10px;
+}
+
+
+.main-container{
+  color: whitesmoke;
+  background-color: #333;
+}
+
+.nav-link-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.course-list-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.course-container{
+  background-color: whitesmoke;
+  color: black;
+  width: 300px;
+  max-height: 400px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  gap: 10px;
+}
+
+.card-headings{
+  color: darkblue;
+}
