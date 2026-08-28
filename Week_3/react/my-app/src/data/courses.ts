@@ -25,7 +25,7 @@ export const courses: Course[] = [
     {
         id:3,
         title: "Theoretical Physics",
-        description: "A fascinating look at current physics theories.",
+        description: "A fascinating look at current physics theory.",
         duration: "12 weeks",
         level: "Advanced"
     }

@@ -9,7 +9,6 @@ type CourseListProps = {
 
 export function CourseList({ courses, selectCourse }: CourseListProps){
     return(
-
         <>
             {courses.map((course) => {
             return(

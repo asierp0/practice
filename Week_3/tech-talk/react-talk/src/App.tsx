@@ -1,19 +1,33 @@
-import './App.css'
 
-function App() {
+/*
 
-    const name: string = "Aaron";
+//BEFORE: Siblings own state.
 
-    function Greeting({ name }: {name: string}){
-      return(
-        <h1>Greetings! {name}</h1>
-      )
-    }
+function SiblingOne(){
+  const [name, setName] = useState("");
+}
 
-  return (
-    <div>
-      <Greeting name = {name}/>
-    </div>
+function SiblingTwo(){
+  const [name, setName] = useState("");
+}
+
+function Parent(){
+
+return(
+  <SiblingOne />
+  <SiblingTwo />
+ )
+}
+
+//AFTER: Parent owns state. 
+
+function Parent(){
+  const [name, setName] = useState("");
+
+  return(
+    <SiblingOne name = {name} setName = {setName} />
+    <SiblingTwo name = {name} />
   )
 }
-export default App
+
+*/
